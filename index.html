@@ -151,10 +151,11 @@ document.addEventListener('DOMContentLoaded', () => {
     btnText.textContent = 'Sending...';
 
     const formData = {
-      access_key: 'YOUR_WEB3FORMS_ACCESS_KEY',
+      access_key: '1a29668d-96ea-4a1e-8825-b3c1cc79fb16',
       name: form.name.value.trim(),
       email: form.email.value.trim(),
       message: form.message.value.trim(),
+      subject: 'New Webloom Contact Message'
     };
 
     try {
@@ -162,9 +163,9 @@ document.addEventListener('DOMContentLoaded', () => {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
-          Accept: 'application/json',
+          Accept: 'application/json'
         },
-        body: JSON.stringify(formData),
+        body: JSON.stringify(formData)
       });
 
       const result = await response.json();
@@ -173,9 +174,9 @@ document.addEventListener('DOMContentLoaded', () => {
         showSuccess();
         form.reset();
       } else {
-        showError(result.message || 'Something went wrong. Try again.');
+        showError(result.message || 'Submission failed.');
       }
-    } catch (error) {
+    } catch (err) {
       showError('Network error. Please try again.');
     } finally {
       button.disabled = false;
@@ -199,6 +200,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 });
 </script>
+
 
 
 </body>
