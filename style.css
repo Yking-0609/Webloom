@@ -24,7 +24,7 @@ body {
 header {
   background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
   color: white;
-  padding: 1.2rem 0;
+  padding: 1.6rem 0;
   position: sticky;
   top: 0;
   z-index: 100;
@@ -89,17 +89,18 @@ nav a:hover {
   background: rgba(255,255,255,0.15);
 }
 
-.logo {
+/* HARD RESET for logo sizing */
+.logo-wrap {
   display: flex;
   align-items: center;
-  gap: 12px;
 }
 
-.logo img {
-  height: 56px;   /* Desktop logo size */
+.logo-wrap img {
+  height: 72px;
   width: auto;
-  display: block;
+  max-height: none;
 }
+
 
 /* Hero */
 .hero {
@@ -377,9 +378,12 @@ footer {
   animation: pop 0.4s ease-out;
 }
 
-.logo img {
-    height: 34px;
+@media (max-width: 768px) {
+  .logo-wrap img {
+    height: 40px;
   }
+}
+
 
 @keyframes pop {
   0% { transform: scale(0.3); opacity: 0; }
