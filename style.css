@@ -105,7 +105,7 @@ nav a:hover {
   max-height: 68px;      /* same as height – prevents overflow */
   object-fit: contain;   /* keeps proportions, centers content */
   display: block;
-  vertical-align: middle;
+  vertical-align: middle; 
 }
 
 /* Very important: prevent logo from forcing header height increase */
