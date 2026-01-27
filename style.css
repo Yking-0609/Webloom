@@ -37,13 +37,6 @@ header {
   align-items: center;
 }
 
-.logo {
-  font-size: 1.9rem;
-  font-weight: 800;
-  letter-spacing: -0.5px;
-  color: white;
-}
-
 nav a {
   color: white;
   text-decoration: none;
@@ -89,14 +82,9 @@ nav a:hover {
   background: rgba(255,255,255,0.15);
 }
 
-.logo {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-
 .logo img {
-  height: 64px;   /* Desktop logo size */
+  height: 52px;          /* good desktop size – visible but not overwhelming */
+  max-height: 64px;      /* safety cap if the original image is very tall */
   width: auto;
   display: block;
 }
@@ -377,9 +365,16 @@ footer {
   animation: pop 0.4s ease-out;
 }
 
-.logo img {
-    height: 38px;
+/* Mobile adjustments */
+@media (max-width: 768px) {
+  .logo img {
+    height: 44px;        /* better visibility on small screens than 38px */
   }
+  
+  .logo {
+    gap: 10px;           /* slightly tighter gap on mobile */
+  }
+}
 
 @keyframes pop {
   0% { transform: scale(0.3); opacity: 0; }
