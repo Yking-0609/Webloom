@@ -93,17 +93,13 @@ nav a:hover {
   display: flex;
   align-items: center;
   gap: 12px;
-  font-size: 1.9rem;
-  font-weight: 800;
-  color: white;
 }
 
 .logo img {
-  height: 42px;
+  height: 56px;   /* Desktop logo size */
   width: auto;
   display: block;
 }
-
 
 /* Hero */
 .hero {
@@ -381,6 +377,9 @@ footer {
   animation: pop 0.4s ease-out;
 }
 
+.logo img {
+    height: 34px;
+  }
 
 @keyframes pop {
   0% { transform: scale(0.3); opacity: 0; }
