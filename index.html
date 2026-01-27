@@ -127,77 +127,56 @@
 
   <!-- Our status message area -->
   <div id="form-message" class="form-message" style="display: none; margin-top: 1.5rem; padding: 1rem; border-radius: 8px; text-align: center;"></div>
-</section>>
+</section>
 
   <!-- Footer -->
   <footer>
     <p>© 2026 Webloom. All rights reserved.</p>
   </footer>
 
-
 <script>
-document.addEventListener('DOMContentLoaded', () => {
-  const form = document.getElementById('contact-form');
-  const messageBox = document.getElementById('form-message');
-  const button = form.querySelector('button');
-  const btnText = button.querySelector('.btn-text');
+document.addEventListener("DOMContentLoaded", () => {
+  const form = document.getElementById("contact-form");
+  const messageBox = document.getElementById("form-message");
+  const button = form.querySelector("button");
 
-  form.addEventListener('submit', async (e) => {
+  form.addEventListener("submit", async (e) => {
     e.preventDefault();
 
-    messageBox.style.display = 'none';
-    messageBox.innerHTML = '';
+    messageBox.style.display = "none";
     button.disabled = true;
-    btnText.textContent = 'Sending...';
+    button.textContent = "Sending...";
 
-    const formData = {
-      access_key: '1a29668d-96ea-4a1e-8825-b3c1cc79fb16',
-      name: form.name.value.trim(),
-      email: form.email.value.trim(),
-      message: form.message.value.trim(),
-      subject: 'New Webloom Contact Message'
-    };
+    const formData = new FormData(form);
 
     try {
-      const response = await fetch('https://api.web3forms.com/submit', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          Accept: 'application/json'
-        },
-        body: JSON.stringify(formData)
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formData
       });
 
       const result = await response.json();
 
       if (result.success) {
-        showSuccess();
+        messageBox.style.display = "block";
+        messageBox.className = "form-message success";
+        messageBox.innerHTML = `
+          <div class="success-icon">✔</div>
+          <p>Message sent successfully! I’ll get back to you soon.</p>
+        `;
         form.reset();
       } else {
-        showError(result.message || 'Submission failed.');
+        throw new Error(result.message);
       }
-    } catch (err) {
-      showError('Network error. Please try again.');
+    } catch (error) {
+      messageBox.style.display = "block";
+      messageBox.className = "form-message error";
+      messageBox.textContent = "Something went wrong. Please try again.";
     } finally {
       button.disabled = false;
-      btnText.textContent = 'Send Message';
+      button.textContent = "Send Message";
     }
   });
-
-  function showSuccess() {
-    messageBox.style.display = 'block';
-    messageBox.className = 'form-message success';
-    messageBox.innerHTML = `
-      <div class="success-icon">✔</div>
-      <p>Message sent successfully!</p>
-    `;
-  }
-
-  function showError(text) {
-    messageBox.style.display = 'block';
-    messageBox.className = 'form-message error';
-    messageBox.textContent = text;
-  }
 });
 </script>
 
