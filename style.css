@@ -89,18 +89,17 @@ nav a:hover {
   background: rgba(255,255,255,0.15);
 }
 
-/* HARD RESET for logo sizing */
-.logo-wrap {
+.logo {
   display: flex;
   align-items: center;
+  gap: 12px;
 }
 
-.logo-wrap img {
-  height: 72px;
+.logo img {
+  height: 64px;   /* Desktop logo size */
   width: auto;
-  max-height: none;
+  display: block;
 }
-
 
 /* Hero */
 .hero {
@@ -378,12 +377,9 @@ footer {
   animation: pop 0.4s ease-out;
 }
 
-@media (max-width: 768px) {
-  .logo-wrap img {
-    height: 40px;
+.logo img {
+    height: 38px;
   }
-}
-
 
 @keyframes pop {
   0% { transform: scale(0.3); opacity: 0; }
