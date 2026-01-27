@@ -11,11 +11,18 @@
 <!-- Header -->
 <header>
   <div class="container nav">
+    <!-- Logo -->
+    <h1 class="logo">Webloom</h1>
 
-  <h1 class="logo">Webloom</h1>
+    <!-- Hamburger for mobile -->
+    <div class="hamburger" id="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
 
-
-    <nav>
+    <!-- Navigation -->
+    <nav id="nav-menu">
       <a href="#services">Services</a>
       <a href="#pricing">Pricing</a>
       <a href="#about">About</a>
@@ -23,6 +30,7 @@
     </nav>
   </div>
 </header>
+
 
 <!-- Hero -->
 <section class="hero" id="top">
@@ -169,6 +177,17 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 </script>
+
+<script>
+// Hamburger menu toggle
+const hamburger = document.getElementById('hamburger');
+const navMenu = document.getElementById('nav-menu');
+
+hamburger.addEventListener('click', () => {
+  navMenu.classList.toggle('show');
+});
+</script>
+
 
 </body>
 </html>
