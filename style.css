@@ -506,3 +506,30 @@ header nav .btn {
     margin-bottom: 1.2rem;
   }
 
+/* Mobile spacing improvements for What I Do & Packages */
+@media (max-width: 768px) {
+
+  /* What I Do section */
+  #services,
+  .services {
+    margin-top: 40px;
+  }
+
+  /* Packages / Pricing section */
+  #pricing,
+  .pricing {
+    margin-top: 40px;
+  }
+
+  /* Extra breathing space inside sections */
+  .section {
+    padding: 90px 0;
+  }
+
+  /* Cards spacing on mobile */
+  .services > div,
+  .price-card {
+    margin-bottom: 1.5rem;
+  }
+}
+
