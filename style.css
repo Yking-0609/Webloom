@@ -538,5 +538,20 @@ header nav .btn {
   background: linear-gradient(135deg, #ede9fe, #f5f3ff);
 }
 
+/* Mobile side spacing for What I Do & Website Packages */
+@media (max-width: 768px) {
+
+  /* What I Do section */
+  #services .services {
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+
+  /* Website Packages section */
+  #pricing .pricing {
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+}
 
 
