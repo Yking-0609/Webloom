@@ -506,6 +506,7 @@ header nav .btn {
     margin-bottom: 1.2rem;
   }
 
+
 /* Mobile spacing improvements for What I Do & Packages */
 @media (max-width: 768px) {
 
@@ -536,4 +537,6 @@ header nav .btn {
   #about {
   background: linear-gradient(135deg, #ede9fe, #f5f3ff);
 }
+
+
 
